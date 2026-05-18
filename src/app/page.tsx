@@ -74,16 +74,20 @@ export default function HomePage() {
                 <CompanyShowcaseSection />
                 <CompanyProfileSection />
               </div>
-              <img
+              <div
                 ref={imageReveal.ref}
-                className="w-full rounded-[22px] object-cover transition-all duration-700 ease-out"
                 style={{
                   opacity: imageReveal.visible ? 1 : 0,
                   transform: imageReveal.visible ? "scale(1)" : "scale(0.97)",
+                  transition: "all 700ms ease-out"
                 }}
-                alt="Rectangle"
-                src="/figmaAssets/rectangle-3158.png"
-              />
+              >
+                <img
+                  className="w-full rounded-[22px] object-cover"
+                  alt="Rectangle"
+                  src="/figmaAssets/rectangle-3158.png"
+                />
+              </div>
               <img
                 className="pointer-events-none hidden lg:absolute lg:right-0 lg:top-[-60px] lg:z-10 lg:block lg:h-[420px] lg:w-[380px]"
                 alt="Group"
