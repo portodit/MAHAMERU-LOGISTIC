@@ -1,13 +1,232 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..60,500&family=DM+Sans:wght@700&family=Kanit:wght@400&display=swap");
 @import "tailwindcss";
+@import "tw-animate-css";
 
-@theme {
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
   --color-grays: rgba(244, 90, 78, 1);
-  --color-secondary-600: rgba(170, 74, 76, 1);
+  --color-black: rgba(16, 16, 16, 1);
+  --color-black-200: rgba(181, 183, 184, 1);
+  --color-black-600: rgba(33, 39, 41, 1);
   --color-black-700: rgba(28, 33, 34, 1);
   --color-black-900: rgba(17, 20, 21, 1);
-  --color-black: rgba(16, 16, 16, 1);
-  --color-white: rgba(255, 255, 255, 1);
-  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --shadow-shadow: 0px 16px 40px 0px rgba(15, 27, 36, 0.1);
+  --color-colorparagraph: rgba(33, 37, 41, 1);
+  --color-colortext: rgba(28, 36, 54, 1);
+  --color-colorwhite: rgba(255, 255, 255, 1);
+  --color-coolgray-700: rgba(74, 85, 104, 1);
+  --color-graywhite: rgba(255, 255, 255, 1);
+  --color-grey-200: rgba(229, 231, 235, 1);
+  --color-grey-300: rgba(209, 213, 219, 1);
+  --color-grey-400: rgba(156, 163, 175, 1);
+  --color-grey-500: rgba(107, 114, 128, 1);
+  --color-grey-600: rgba(33, 39, 41, 1);
+  --color-red-100: rgba(248, 212, 212, 1);
+  --color-red-600: rgba(220, 38, 38, 1);
+  --color-secondary-600: rgba(170, 74, 76, 1);
+  --color-x-100: rgba(243, 247, 248, 1);
+  --color-x-900: rgba(9, 15, 50, 1);
+
+  --font-heading-h2: var(--font-poppins), 'Poppins', Helvetica;
+  --font-heading-h4: var(--font-poppins), 'Poppins', Helvetica;
+  --font-body-large-medium: var(--font-poppins), 'Poppins', Helvetica;
+  --font-body-large-semibold: var(--font-poppins), 'Poppins', Helvetica;
+  --font-body-medium-medium: var(--font-poppins), 'Poppins', Helvetica;
+  --font-body-medium-semibold: var(--font-poppins), 'Poppins', Helvetica;
+  --font-body-small-medium: var(--font-poppins), 'Poppins', Helvetica;
+  --font-body-text-text-base-regular: var(--font-poppins), 'Poppins', Helvetica;
+  --font-text-xs-semi-bold: var(--font-poppins), 'Poppins', Helvetica;
+
+  --font-sans: 'Poppins', sans-serif;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
+
+:root {
+  --font-poppins: 'Poppins';
+  --font-bricolage: 'Bricolage Grotesque';
+  --font-dm-sans: 'DM Sans';
+  --font-kanit: 'Kanit';
+
+  --black: rgba(16, 16, 16, 1);
+  --black-200: rgba(181, 183, 184, 1);
+  --black-600: rgba(33, 39, 41, 1);
+  --black-700: rgba(28, 33, 34, 1);
+  --black-900: rgba(17, 20, 21, 1);
+  --body-large-medium-font-family: var(--font-poppins), "Poppins", Helvetica;
+  --body-large-medium-font-size: 18px;
+  --body-large-medium-font-style: normal;
+  --body-large-medium-font-weight: 500;
+  --body-large-medium-letter-spacing: 0px;
+  --body-large-medium-line-height: 155%;
+  --body-large-semibold-font-family: var(--font-poppins), "Poppins", Helvetica;
+  --body-large-semibold-font-size: 18px;
+  --body-large-semibold-font-style: normal;
+  --body-large-semibold-font-weight: 600;
+  --body-large-semibold-letter-spacing: 0px;
+  --body-large-semibold-line-height: 155%;
+  --body-medium-medium-font-family: var(--font-poppins), "Poppins", Helvetica;
+  --body-medium-medium-font-size: 16px;
+  --body-medium-medium-font-style: normal;
+  --body-medium-medium-font-weight: 500;
+  --body-medium-medium-letter-spacing: 0px;
+  --body-medium-medium-line-height: 160%;
+  --body-medium-semibold-font-family: var(--font-poppins), "Poppins", Helvetica;
+  --body-medium-semibold-font-size: 16px;
+  --body-medium-semibold-font-style: normal;
+  --body-medium-semibold-font-weight: 600;
+  --body-medium-semibold-letter-spacing: 0px;
+  --body-medium-semibold-line-height: 155%;
+  --body-small-medium-font-family: var(--font-poppins), "Poppins", Helvetica;
+  --body-small-medium-font-size: 14px;
+  --body-small-medium-font-style: normal;
+  --body-small-medium-font-weight: 500;
+  --body-small-medium-letter-spacing: 0px;
+  --body-small-medium-line-height: 155%;
+  --body-text-text-base-regular-font-family: var(--font-poppins), "Poppins", Helvetica;
+  --body-text-text-base-regular-font-size: 16px;
+  --body-text-text-base-regular-font-style: normal;
+  --body-text-text-base-regular-font-weight: 400;
+  --body-text-text-base-regular-letter-spacing: 0px;
+  --body-text-text-base-regular-line-height: 24px;
+  --colorparagraph: rgba(33, 37, 41, 1);
+  --colortext: rgba(28, 36, 54, 1);
+  --colorwhite: rgba(255, 255, 255, 1);
+  --coolgray-700: rgba(74, 85, 104, 1);
+  --coolgraywhite: rgba(255, 255, 255, 1);
+  --grays: rgba(244, 90, 78, 1);
+  --graywhite: rgba(255, 255, 255, 1);
+  --grey-200: rgba(229, 231, 235, 1);
+  --grey-300: rgba(209, 213, 219, 1);
+  --grey-400: rgba(156, 163, 175, 1);
+  --grey-500: rgba(107, 114, 128, 1);
+  --grey-600: rgba(33, 39, 41, 1);
+  --heading-h2-font-family: var(--font-poppins), "Poppins", Helvetica;
+  --heading-h2-font-size: 40px;
+  --heading-h2-font-style: normal;
+  --heading-h2-font-weight: 700;
+  --heading-h2-letter-spacing: 0px;
+  --heading-h2-line-height: 120.00000762939453%;
+  --heading-h4-font-family: var(--font-poppins), "Poppins", Helvetica;
+  --heading-h4-font-size: 24px;
+  --heading-h4-font-style: normal;
+  --heading-h4-font-weight: 700;
+  --heading-h4-letter-spacing: 0px;
+  --heading-h4-line-height: 150%;
+  --red-100: rgba(248, 212, 212, 1);
+  --red-600: rgba(220, 38, 38, 1);
+  --secondary-600: rgba(170, 74, 76, 1);
+  --shadow: 0px 16px 40px 0px rgba(15, 27, 36, 0.1);
+  --shadow-lg: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px 0px rgba(0, 0, 0, 0.05);
+  --text-xs-semi-bold-font-family: var(--font-poppins), "Poppins", Helvetica;
+  --text-xs-semi-bold-font-size: 12px;
+  --text-xs-semi-bold-font-style: normal;
+  --text-xs-semi-bold-font-weight: 600;
+  --text-xs-semi-bold-letter-spacing: 0px;
+  --text-xs-semi-bold-line-height: 130%;
+  --white: rgba(255, 255, 255, 1);
+  --x-100: rgba(243, 247, 248, 1);
+  --x-900: rgba(9, 15, 50, 1);
+
+  --background: 0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 47.4% 11.2%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 47.4% 11.2%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 215 20.2% 65.1%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: var(--font-poppins), 'Poppins', Helvetica, sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-poppins), 'Poppins', Helvetica, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins), 'Poppins', Helvetica, sans-serif;
+  }
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+.animate-accordion-down { animation: accordion-down 0.2s ease-out; }
+.animate-accordion-up   { animation: accordion-up 0.2s ease-out; }
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-left  { animation: fadeInLeft  0.75s cubic-bezier(0.22,1,0.36,1) both; }
+.animate-fade-in-right { animation: fadeInRight 0.75s cubic-bezier(0.22,1,0.36,1) both; }
+.animate-fade-in-up    { animation: fadeInUp    0.65s cubic-bezier(0.22,1,0.36,1) both; }
+.animate-fade-in       { animation: fadeInUp    0.4s  cubic-bezier(0.22,1,0.36,1) both; }
+
+.anim-delay-100 { animation-delay: 0.10s; }
+.anim-delay-200 { animation-delay: 0.20s; }
+.anim-delay-300 { animation-delay: 0.30s; }
+.anim-delay-450 { animation-delay: 0.45s; }
+.anim-delay-600 { animation-delay: 0.60s; }
+
+/* ── Leaflet: keep all map layers below the fixed navbar (z-50 = 50) ── */
+.leaflet-pane         { z-index: 4  !important; }
+.leaflet-overlay-pane { z-index: 4  !important; }
+.leaflet-shadow-pane  { z-index: 5  !important; }
+.leaflet-marker-pane  { z-index: 6  !important; }
+.leaflet-tooltip-pane { z-index: 7  !important; }
+.leaflet-popup-pane   { z-index: 8  !important; }
+.leaflet-top,
+.leaflet-bottom       { z-index: 9  !important; }
