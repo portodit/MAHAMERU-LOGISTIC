@@ -224,18 +224,18 @@ export const HeroSection = (): JSX.Element => {
                 <span className="font-semibold"> untuk retail, UMKM, supplier, hingga industri.</span>
               </p>
 
-              <div className="animate-fade-in-left anim-delay-450 mt-6 flex flex-wrap gap-3 sm:gap-4">
+              <div className="animate-fade-in-left anim-delay-450 mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
                 <a
                   href="#layanan"
                   onClick={(e) => { e.preventDefault(); handleNav("#layanan"); }}
-                  className="inline-flex h-[50px] min-w-[140px] items-center justify-center rounded-lg bg-grays px-6 text-[15px] font-semibold text-white shadow-sm transition-colors hover:bg-grays/90 sm:h-[56px] sm:min-w-0 sm:px-8"
+                  className="flex h-[50px] w-full items-center justify-center rounded-lg bg-grays px-6 text-[15px] font-semibold text-white shadow-sm transition-colors hover:bg-grays/90 sm:h-[56px] sm:w-auto sm:px-8"
                 >
                   Layanan Kami
                 </a>
                 <button
                   type="button"
                   onClick={() => setTrackingOpen(true)}
-                  className="inline-flex h-[50px] min-w-[140px] items-center justify-center rounded-lg border-2 border-white bg-white px-6 text-[15px] font-semibold text-secondary-600 transition-colors hover:bg-white/90 sm:h-[56px] sm:min-w-0 sm:px-8"
+                  className="flex h-[50px] w-full items-center justify-center rounded-lg border-2 border-white bg-white px-6 text-[15px] font-semibold text-secondary-600 transition-colors hover:bg-white/90 sm:h-[56px] sm:w-auto sm:px-8"
                 >
                   Lacak Pengiriman
                 </button>
