@@ -215,6 +215,15 @@
 .animate-fade-in-up    { animation: fadeInUp    0.65s cubic-bezier(0.22,1,0.36,1) both; }
 .animate-fade-in       { animation: fadeInUp    0.4s  cubic-bezier(0.22,1,0.36,1) both; }
 
+/* Invisible scrollbar */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .anim-delay-100 { animation-delay: 0.10s; }
 .anim-delay-200 { animation-delay: 0.20s; }
 .anim-delay-300 { animation-delay: 0.30s; }

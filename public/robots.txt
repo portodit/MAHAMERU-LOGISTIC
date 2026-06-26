@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://mahameru-logistic.co.id/sitemap.xml

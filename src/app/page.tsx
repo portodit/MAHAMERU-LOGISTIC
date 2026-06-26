@@ -3,6 +3,7 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { BusinessProfileSection } from "@/components/sections/BusinessProfileSection";
 import { CompanyBannerSection } from "@/components/sections/CompanyBannerSection";
+import { KeunggulanSection } from "@/components/sections/KeunggulanSection";
 import { GalleryFilterSection } from "@/components/sections/GalleryFilterSection";
 import { PhotoGallerySection } from "@/components/sections/PhotoGallerySection";
 import { BranchLocatorSection } from "@/components/sections/BranchLocatorSection";
@@ -22,6 +23,10 @@ export default function HomePage() {
 
       <section id="layanan" className="scroll-mt-[96px] px-4 py-16 sm:px-6 md:px-8 lg:px-[78px] md:py-24">
         <CompanyBannerSection />
+      </section>
+
+      <section id="keunggulan" className="scroll-mt-[96px]">
+        <KeunggulanSection />
       </section>
 
       <section id="galeri" className="scroll-mt-[96px] mt-8 md:mt-14 md:py-24">
