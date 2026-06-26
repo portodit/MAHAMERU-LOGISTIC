@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { ShipmentTrackingSection } from "./ShipmentTrackingSection";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const navItems = [
   { label: "Beranda",     href: "#beranda" },
@@ -18,6 +19,13 @@ export const HeroSection = (): JSX.Element => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [trackingOpen, setTrackingOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("beranda");
+
+  // Scroll reveal refs
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { ref: h1Ref, isVisible: h1Visible } = useScrollReveal<HTMLHeadingElement>();
+  const { ref: pRef, isVisible: pVisible } = useScrollReveal<HTMLParagraphElement>();
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal<HTMLDivElement>();
+  const { ref: trackingRef, isVisible: trackingVisible } = useScrollReveal<HTMLDivElement>();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 10);
@@ -207,12 +215,12 @@ export const HeroSection = (): JSX.Element => {
 
             {/* Left: headline + description + CTAs */}
             <div className="flex flex-col justify-center">
-              <h1 className="animate-fade-in-left text-[clamp(1.6rem,4.5vw,3.4rem)] font-extrabold leading-[1.15] tracking-tight text-white [text-shadow:0px_3px_8px_rgba(0,0,0,0.6)]">
+              <h1 ref={h1Ref} className={`text-[clamp(1.6rem,4.5vw,3.4rem)] font-extrabold leading-[1.15] tracking-tight text-white [text-shadow:0px_3px_8px_rgba(0,0,0,0.6)] ${h1Visible ? "animate-fade-in-left" : "opacity-0"}`}>
                 Solusi Logistik Laut<br />
                 Murah, Cepat, Terpercaya
               </h1>
 
-              <p className="animate-fade-in-left anim-delay-200 mt-4 text-[clamp(0.85rem,1.5vw,1.1rem)] font-normal leading-relaxed text-white/90">
+              <p ref={pRef} className={`mt-4 text-[clamp(0.85rem,1.5vw,1.1rem)] font-normal leading-relaxed text-white/90 ${pVisible ? "animate-fade-in-left" : "opacity-0"}`} style={{ animationDelay: "0.1s" }}>
                 <span className="font-semibold">Sejak </span>
                 <span className="font-extrabold">2020</span>
                 <span className="font-semibold">, Mahameru Logistic melayani pengiriman cargo container ke Banjarmasin dan Manado melalui layanan </span>
@@ -224,7 +232,7 @@ export const HeroSection = (): JSX.Element => {
                 <span className="font-semibold"> untuk retail, UMKM, supplier, hingga industri.</span>
               </p>
 
-              <div className="animate-fade-in-left anim-delay-450 mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
+              <div ref={ctaRef} className={`mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4 ${ctaVisible ? "animate-fade-in-left" : "opacity-0"}`} style={{ animationDelay: "0.2s" }}>
                 <a
                   href="#layanan"
                   onClick={(e) => { e.preventDefault(); handleNav("#layanan"); }}
@@ -243,7 +251,7 @@ export const HeroSection = (): JSX.Element => {
             </div>
 
             {/* Right: tracking card — only on md+ */}
-            <div className="hidden animate-fade-in-right anim-delay-300 md:block">
+            <div ref={trackingRef} className={`hidden md:block ${trackingVisible ? "animate-fade-in-right" : "opacity-0"}`} style={{ animationDelay: "0.15s" }}>
               <ShipmentTrackingSection />
             </div>
 
