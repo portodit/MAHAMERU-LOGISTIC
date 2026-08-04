@@ -39,40 +39,43 @@ export const FooterSection = (): JSX.Element => {
               src="/figmaAssets/mahameru-transportasi-nusantara-logo-transparent-3.png"
             />
             <p className="mt-4 text-sm leading-relaxed text-[#757575]">
-              PT. Mahameru Transportasi Nusantara adalah perusahaan logistik yang berdiri sejak 2020 dan berpengalaman melayani pengiriman cargo container dari Surabaya ke Banjarmasin dan Manado.
+              PT. Mahameru Transportasi Nusantara adalah perusahaanlogistik yang berdiri sejak 2020 dan berpengalaman melayani pengiriman cargo container dari Surabaya ke Banjarmasin dan Manado.
             </p>
           </div>
 
-          {/* Tautan */}
-          <nav aria-label="Tautan" className="flex flex-col">
-            <h2 className="text-base font-bold text-[#0f1b24]">Tautan</h2>
-            <ul className="mt-3 space-y-2 text-sm text-[#757575]">
-              {footerLinks.tautan.map((link) => (
-                <li key={link}>
-                  <button type="button" className="p-0 text-left hover:text-[#0f1b24] transition-colors">
-                    {link}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {/* Tautan & Layanan - side by side on mobile */}
+          <div className="grid grid-cols-2 gap-6 lg:contents">
+            {/* Tautan */}
+            <nav aria-label="Tautan" className="flex flex-col">
+              <h2 className="text-base font-bold text-[#0f1b24]">Tautan</h2>
+              <ul className="mt-3 space-y-2 text-sm text-[#757575]">
+                {footerLinks.tautan.map((link) => (
+                  <li key={link}>
+                    <button type="button" className="p-0 text-left hover:text-[#0f1b24] transition-colors">
+                      {link}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-          {/* Layanan */}
-          <nav aria-label="Layanan" className="flex flex-col">
-            <h2 className="text-base font-bold text-[#0f1b24]">Layanan</h2>
-            <ul className="mt-3 space-y-2 text-sm text-[#757575]">
-              {footerLinks.layanan.map((link) => (
-                <li key={link}>
-                  <button type="button" className="p-0 text-left hover:text-[#0f1b24] transition-colors">
-                    {link}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
+            {/* Layanan */}
+            <nav aria-label="Layanan" className="flex flex-col">
+              <h2 className="text-base font-bold text-[#0f1b24]">Layanan</h2>
+              <ul className="mt-3 space-y-2 text-sm text-[#757575]">
+                {footerLinks.layanan.map((link) => (
+                  <li key={link}>
+                    <button type="button" className="p-0 text-left hover:text-[#0f1b24] transition-colors">
+                      {link}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
 
           {/* Hubungi Kami */}
-          <div className="flex flex-col">
+          <div className="flex flex-col lg:col-span-1">
             <h2 className="text-base font-bold text-[#0f1b24]">Hubungi Kami</h2>
             <ul className="mt-3 space-y-3">
               {contactItems.map((item) => (
